@@ -96,6 +96,7 @@ if (isset($_GET['id'])) {
           <p tabindex="0" class="destinasi-info_address">Alamat : <a href="https://www.google.com/maps/search/?api=1&query=<?php echo urlencode($alamat_wisata); ?>"
               target="_blank"><?php echo htmlspecialchars($alamat_wisata); ?></a></p>
         </div>
+        
       </div>
     </div>
 
@@ -119,6 +120,7 @@ if (isset($_GET['id'])) {
           <p tabindex="0" class="destinasi-info_address">Alamat : <a href="https://www.google.com/maps/search/?api=1&query=<?php echo urlencode($alamat_kuliner); ?>"
                 target="_blank"><?php echo htmlspecialchars($alamat_kuliner); ?></a></p>
         </div>
+        
       </div>
     </div>
   </main>
