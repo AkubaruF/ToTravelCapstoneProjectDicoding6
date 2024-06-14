@@ -1,0 +1,64 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url('../asset/homee.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-direction: column;
+}
+
+.login-wrapper {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.box-form {
+  padding: 20px;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.799);
+}
+
+.title-login {
+  font-size: 1.7rem;
+  text-align: center;
+  border-bottom: 1px solid #190db6;
+  margin-bottom: 1rem;
+  color: #190db6;
+}
+
+.input-text {
+  background-color: #d3e8fe;
+  border-radius: 10px;
+}
+
+.btn-login {
+  background-color: #190db6;
+}
+
+.btn-reset {
+  background-color: #190db6;
+}
+
+
+.div-logo {
+  width: 100%;
+  text-align: center;
+}
+
+.div-logo .travel-logo {
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.div-logo .travel-logo span {
+  color: #190db6;
+}

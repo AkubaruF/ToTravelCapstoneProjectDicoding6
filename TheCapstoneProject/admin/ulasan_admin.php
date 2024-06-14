@@ -37,14 +37,14 @@ if ($op == 'delete' && isset($_GET['nama']) && isset($_GET['deskripsi'])) {
 
 <h1>Halaman Admin Tempat</h1>
 <?php if ($sukses) { ?>
-    <div class="alert alert-primary" role="alert">
-        <?php echo $sukses; ?>
-    </div>
+<div class="alert alert-primary" role="alert">
+    <?php echo $sukses; ?>
+</div>
 <?php } ?>
 <?php if (isset($error)) { ?>
-    <div class="alert alert-danger" role="alert">
-        <?php echo $error; ?>
-    </div>
+<div class="alert alert-danger" role="alert">
+    <?php echo $error; ?>
+</div>
 <?php } ?>
 <form class="row g-3" method="get">
     <div class="col-auto">
@@ -88,29 +88,29 @@ if ($op == 'delete' && isset($_GET['nama']) && isset($_GET['deskripsi'])) {
             $q1 = mysqli_query($koneksi, $sql1);
             while ($r1 = mysqli_fetch_array($q1)) {
                 ?>
-                <tr>
-                    <td>
-                        <?php echo $nomor++; ?>
-                    </td>
-                    <td>
-                        <?php echo $r1['ditinjau']; ?>
-                    </td>
-                    <td>
-                        <?php echo $r1['nama']; ?>
-                    </td>
-                    <td>
-                        <?php echo $r1['nilai']; ?>
-                    </td>
-                    <td>
-                        <?php echo $r1['deskripsi']; ?>
-                    </td>
-                    <td>
-                        <a href="ulasan_admin.php?op=delete&nama=<?php echo $r1['nama']; ?>&deskripsi=<?php echo $r1['deskripsi']; ?>"
-                            onclick="return confirm('Ingin hapus data tersebut?')"><span
-                                class="badge text-bg-danger">Delete</span></a>
-                    </td>
-                </tr>
-                <?php
+        <tr>
+            <td>
+                <?php echo $nomor++; ?>
+            </td>
+            <td>
+                <?php echo $r1['ditinjau']; ?>
+            </td>
+            <td>
+                <?php echo $r1['nama']; ?>
+            </td>
+            <td>
+                <?php echo $r1['nilai']; ?>
+            </td>
+            <td>
+                <?php echo $r1['deskripsi']; ?>
+            </td>
+            <td>
+                <a href="ulasan_admin.php?op=delete&nama=<?php echo $r1['nama']; ?>&deskripsi=<?php echo $r1['deskripsi']; ?>"
+                    onclick="return confirm('Ingin hapus data tersebut?')"><span
+                        class="badge text-bg-danger">Delete</span></a>
+            </td>
+        </tr>
+        <?php
             }
         } else {
             echo "Error: " . mysqli_error($koneksi);

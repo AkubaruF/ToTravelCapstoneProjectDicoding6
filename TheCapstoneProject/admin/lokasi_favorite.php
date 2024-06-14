@@ -66,14 +66,14 @@ function getFotoPaths($id)
         </a>
     </p>
     <?php if ($error) { ?>
-        <div class="alert alert-danger" role="alert">
-            <?php echo htmlspecialchars($error); ?>
-        </div>
+    <div class="alert alert-danger" role="alert">
+        <?php echo htmlspecialchars($error); ?>
+    </div>
     <?php } ?>
     <?php if ($sukses) { ?>
-        <div class="alert alert-success" role="alert">
-            <?php echo htmlspecialchars($sukses); ?>
-        </div>
+    <div class="alert alert-success" role="alert">
+        <?php echo htmlspecialchars($sukses); ?>
+    </div>
     <?php } ?>
     <form class="row g-3" method="get">
         <div class="col-auto">
@@ -126,54 +126,54 @@ function getFotoPaths($id)
                 $q1 = mysqli_query($koneksi, $sql1);
                 while ($r1 = mysqli_fetch_array($q1)) {
                     ?>
-                    <tr>
-                        <td>
-                            <?php echo $nomor++; ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($r1['namawisata']); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($r1['namakuliner']); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($r1['deskripsiwisata']); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($r1['deskripsikuliner']); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($r1['alamatwisata']); ?>
-                        </td>
-                        <td>
-                            <?php echo htmlspecialchars($r1['alamatkuliner']); ?>
-                        </td>
-                        <?php
+            <tr>
+                <td>
+                    <?php echo $nomor++; ?>
+                </td>
+                <td>
+                    <?php echo htmlspecialchars($r1['namawisata']); ?>
+                </td>
+                <td>
+                    <?php echo htmlspecialchars($r1['namakuliner']); ?>
+                </td>
+                <td>
+                    <?php echo htmlspecialchars($r1['deskripsiwisata']); ?>
+                </td>
+                <td>
+                    <?php echo htmlspecialchars($r1['deskripsikuliner']); ?>
+                </td>
+                <td>
+                    <?php echo htmlspecialchars($r1['alamatwisata']); ?>
+                </td>
+                <td>
+                    <?php echo htmlspecialchars($r1['alamatkuliner']); ?>
+                </td>
+                <?php
                         $fotoPaths = getFotoPaths($r1['id']);
                         for ($i = 1; $i <= 6; $i++) {
                             if ($fotoPaths['foto' . $i]) {
                                 ?>
-                                <td>
-                                    <img src="data:image/jpeg;base64,<?php echo base64_encode($fotoPaths['foto' . $i]); ?>"
-                                        style="max-height: 100px; max-width: 100px;" />
-                                </td>
-                                <?php
+                <td>
+                    <img src="data:image/jpeg;base64,<?php echo base64_encode($fotoPaths['foto' . $i]); ?>"
+                        style="max-height: 100px; max-width: 100px;" />
+                </td>
+                <?php
                             } else {
                                 ?>
-                                <td>No Image</td>
-                                <?php
+                <td>No Image</td>
+                <?php
                             }
                         }
                         ?>
-                        <td>
-                            <a href="input_favorite.php?id=<?php echo $r1['id']; ?>"><span
-                                    class="badge text-bg-warning">Edit</span></a>
-                            <a href="lokasi_favorite.php?op=delete&id=<?php echo $r1['id']; ?>"
-                                onclick="return confirm('Ingin hapus data tersebut?')"><span
-                                    class="badge text-bg-danger">Delete</span></a>
-                        </td>
-                    </tr>
-                    <?php
+                <td>
+                    <a href="input_favorite.php?id=<?php echo $r1['id']; ?>"><span
+                            class="badge text-bg-warning">Edit</span></a>
+                    <a href="lokasi_favorite.php?op=delete&id=<?php echo $r1['id']; ?>"
+                        onclick="return confirm('Ingin hapus data tersebut?')"><span
+                            class="badge text-bg-danger">Delete</span></a>
+                </td>
+            </tr>
+            <?php
                 }
             } else {
                 echo "Error: " . mysqli_error($koneksi);

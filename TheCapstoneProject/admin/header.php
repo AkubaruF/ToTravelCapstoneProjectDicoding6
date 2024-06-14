@@ -1,4 +1,9 @@
 <?php
+session_start();
+if ($_SESSION['admin_username'] == '') {
+    header("location:login.php");
+    exit();
+}
 include ("../inc/inc_koneksi.php");
 include ("../inc/inc_fungsi.php");
 ?>
@@ -42,13 +47,20 @@ include ("../inc/inc_fungsi.php");
             padding: 10px 0px 10px 0px;
         }
     </style>
+    <script>
+        $(document).ready(function() {
+            $('.navbar-toggler').on('click', function() {
+                $('#navbarNav').toggleClass('show');
+            });
+        });
+    </script>
 </head>
 
-<body class="container">
+<body class="container-fluid">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Menu</a>
+                <a class="navbar-brand" href="index.php">Admin</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -76,9 +88,15 @@ include ("../inc/inc_fungsi.php");
                         <li class="nav-item">
                             <a class="nav-link" href="ulasan_admin.php">Ulasan</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ganti_password.php">Ganti Password</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout.php">Logout>></a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <main></main>
+    <main>

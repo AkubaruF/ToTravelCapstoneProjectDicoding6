@@ -112,11 +112,11 @@ if (isset($_POST['simpan'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin | Pulau Jawa</title>
-    
+
     <style>
-        .link-back {
-            color: purple;
-        }
+    .link-back {
+        color: purple;
+    }
     </style>
 </head>
 
@@ -128,16 +128,16 @@ if (isset($_POST['simpan'])) {
 
     <!-- Tampilkan pesan error jika ada -->
     <?php if ($error) { ?>
-        <div class="alert alert-danger" role="alert">
-            <?php echo $error; ?>
-        </div>
+    <div class="alert alert-danger" role="alert">
+        <?php echo $error; ?>
+    </div>
     <?php } ?>
 
     <!-- Tampilkan pesan sukses jika ada -->
     <?php if ($sukses) { ?>
-        <div class="alert alert-success" role="alert">
-            <?php echo $sukses; ?>
-        </div>
+    <div class="alert alert-success" role="alert">
+        <?php echo $sukses; ?>
+    </div>
     <?php } ?>
 
     <!-- Form untuk memasukkan atau mengupdate data -->
@@ -166,10 +166,10 @@ if (isset($_POST['simpan'])) {
                     id="alamatwisata"><?php echo htmlspecialchars($alamatwisata); ?></textarea>
                 <!-- Tautan ke Google Maps -->
                 <?php if ($alamatwisata) { ?>
-                    <div>
-                        <a href="<?php echo createGoogleMapsLink($alamatwisata); ?>" target="_blank">Lihat di Google
-                            Maps</a>
-                    </div>
+                <div>
+                    <a href="<?php echo createGoogleMapsLink($alamatwisata); ?>" target="_blank">Lihat di Google
+                        Maps</a>
+                </div>
                 <?php } ?>
             </div>
         </div>
@@ -197,10 +197,10 @@ if (isset($_POST['simpan'])) {
                     id="alamatkuliner"><?php echo htmlspecialchars($alamatkuliner); ?></textarea>
                 <!-- Tautan ke Google Maps -->
                 <?php if ($alamatkuliner) { ?>
-                    <div>
-                        <a href="<?php echo createGoogleMapsLink($alamatkuliner); ?>" target="_blank">Lihat di Google
-                            Maps</a>
-                    </div>
+                <div>
+                    <a href="<?php echo createGoogleMapsLink($alamatkuliner); ?>" target="_blank">Lihat di Google
+                        Maps</a>
+                </div>
                 <?php } ?>
             </div>
         </div>
@@ -212,16 +212,16 @@ if (isset($_POST['simpan'])) {
                 <?php for ($i = 0; $i < 6; $i++) {
                     $fotoVar = "foto" . ($i + 1);
                     $fotoVal = ${$fotoVar}; ?>
-                    <?php if (!empty($fotoVal)) { ?>
-                        <div>
-                            <img src="data:image/jpeg;base64,<?php echo base64_encode($fotoVal); ?>"
-                                alt="Foto <?php echo $i + 1; ?>" style="width: 100px; height: 100px; object-fit: cover;">
-                            <input type="file" class="form-control" id="foto<?php echo $i + 1; ?>" name="foto[]"
-                                accept="image/*">
-                        </div>
-                    <?php } else { ?>
-                        <input type="file" class="form-control" id="foto<?php echo $i + 1; ?>" name="foto[]" accept="image/*">
-                    <?php } ?>
+                <?php if (!empty($fotoVal)) { ?>
+                <div>
+                    <img src="data:image/jpeg;base64,<?php echo base64_encode($fotoVal); ?>"
+                        alt="Foto <?php echo $i + 1; ?>" style="width: 100px; height: 100px; object-fit: cover;">
+                    <input type="file" class="form-control" id="foto<?php echo $i + 1; ?>" name="foto[]"
+                        accept="image/*">
+                </div>
+                <?php } else { ?>
+                <input type="file" class="form-control" id="foto<?php echo $i + 1; ?>" name="foto[]" accept="image/*">
+                <?php } ?>
                 <?php } ?>
             </div>
         </div>

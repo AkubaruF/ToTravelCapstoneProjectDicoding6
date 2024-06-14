@@ -41,14 +41,14 @@ if ($op == 'delete' && isset($_GET['id'])) {
     </a>
 </p>
 <?php if ($sukses) { ?>
-    <div class="alert alert-primary" role="alert">
-        <?php echo $sukses; ?>
-    </div>
+<div class="alert alert-primary" role="alert">
+    <?php echo $sukses; ?>
+</div>
 <?php } ?>
 <?php if (isset($error)) { ?>
-    <div class="alert alert-danger" role="alert">
-        <?php echo $error; ?>
-    </div>
+<div class="alert alert-danger" role="alert">
+    <?php echo $error; ?>
+</div>
 <?php } ?>
 <form class="row g-3" method="get">
     <div class="col-auto">
@@ -101,54 +101,53 @@ if ($op == 'delete' && isset($_GET['id'])) {
             $q1 = mysqli_query($koneksi, $sql1);
             while ($r1 = mysqli_fetch_array($q1)) {
                 ?>
-                <tr>
-                    <td>
-                        <?php echo $nomor++; ?>
-                    </td>
-                    <td>
-                        <?php echo $r1['namawisata']; ?>
-                    </td>
-                    <td>
-                        <?php echo $r1['namakuliner']; ?>
-                    </td>
-                    <td>
-                        <?php echo $r1['deskripsiwisata']; ?>
-                    </td>
-                    <td>
-                        <?php echo $r1['deskripsikuliner']; ?>
-                    </td>
-                    <td>
-                        <?php echo $r1['alamatwisata']; ?>
-                    </td>
-                    <td>
-                        <?php echo $r1['alamatkuliner']; ?>
-                    </td>
-                    <?php
+        <tr>
+            <td>
+                <?php echo $nomor++; ?>
+            </td>
+            <td>
+                <?php echo $r1['namawisata']; ?>
+            </td>
+            <td>
+                <?php echo $r1['namakuliner']; ?>
+            </td>
+            <td>
+                <?php echo $r1['deskripsiwisata']; ?>
+            </td>
+            <td>
+                <?php echo $r1['deskripsikuliner']; ?>
+            </td>
+            <td>
+                <?php echo $r1['alamatwisata']; ?>
+            </td>
+            <td>
+                <?php echo $r1['alamatkuliner']; ?>
+            </td>
+            <?php
                     $fotoPaths = getFotoPaths($r1['id']);
                     for ($i = 1; $i <= 6; $i++) {
                         if ($fotoPaths['foto' . $i]) {
                             ?>
-                            <td>
-                                <img src="data:image/jpeg;base64,<?php echo base64_encode($fotoPaths['foto' . $i]); ?>"
-                                    style="max-height: 100px; max-width: 100px;" />
-                            </td>
-                            <?php
+            <td>
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($fotoPaths['foto' . $i]); ?>"
+                    style="max-height: 100px; max-width: 100px;" />
+            </td>
+            <?php
                         } else {
                             ?>
-                            <td>No Image</td>
-                            <?php
+            <td>No Image</td>
+            <?php
                         }
                     }
                     ?>
-                    <td>
-                        <a href="input_bali.php?id=<?php echo $r1['id']; ?>"><span
-                                class="badge text-bg-warning">Edit</span></a>
-                        <a href="lokasi_bali.php?op=delete&id=<?php echo $r1['id']; ?>"
-                            onclick="return confirm('Ingin hapus data tersebut?')"><span
-                                class="badge text-bg-danger">Delete</span></a>
-                    </td>
-                </tr>
-                <?php
+            <td>
+                <a href="input_bali.php?id=<?php echo $r1['id']; ?>"><span class="badge text-bg-warning">Edit</span></a>
+                <a href="lokasi_bali.php?op=delete&id=<?php echo $r1['id']; ?>"
+                    onclick="return confirm('Ingin hapus data tersebut?')"><span
+                        class="badge text-bg-danger">Delete</span></a>
+            </td>
+        </tr>
+        <?php
             }
         } else {
             echo "Error: " . mysqli_error($koneksi);
