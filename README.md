@@ -1,6 +1,12 @@
 Judul Proyek : ToTravel
+
+
 Tema yang dipilih : Sosial, Budaya, Pariwisata, dan Lingkungan yang Berkelanjutan
+
+
 Team ID : C624-PS051
+
+
 Anggota Kelompok :
 1. (F0096YB095) – (Farhan Hadi Oktaryono) - [Aktif]
 2. (F0096XB109) – (Afifah Indah Arini) - [Aktif]
